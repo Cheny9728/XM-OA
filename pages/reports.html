@@ -1,0 +1,36 @@
+<div class="reports-content">
+    <h2>工作汇报</h2>
+    <div class="reports-tabs">
+        <button class="tab-btn active" data-type="all">全部</button>
+        <button class="tab-btn" data-type="equipment">机组档案</button>
+        <button class="tab-btn" data-type="offshore">海上工作</button>
+        <button class="tab-btn" data-type="duty">值班工作</button>
+    </div>
+    
+    <div class="report-form">
+        <h3>提交新报告</h3>
+        <form id="reportForm">
+            <div class="form-group">
+                <label for="report-title">标题</label>
+                <input type="text" id="report-title" required>
+            </div>
+            <div class="form-group">
+                <label for="report-type">类型</label>
+                <select id="report-type" required>
+                    <option value="equipment">机组档案</option>
+                    <option value="offshore">海上工作</option>
+                    <option value="duty">值班工作</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="report-content">内容</label>
+                <textarea id="report-content" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">提交报告</button>
+        </form>
+    </div>
+    
+    <div class="reports-list">
+        <!-- 报告列表将通过JavaScript动态加载 -->
+    </div>
+</div> 

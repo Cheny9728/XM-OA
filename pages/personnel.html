@@ -1,0 +1,35 @@
+<div class="personnel-content">
+    <h2>人员状态管理</h2>
+    <div class="filter-section">
+        <select id="year" class="form-control">
+            <option value="2024">2024年</option>
+            <option value="2023">2023年</option>
+        </select>
+        <button onclick="exportData()" class="btn btn-secondary">导出数据</button>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stats-card">
+            <h3>年度休假统计</h3>
+            <div id="vacation-chart" class="chart-container"></div>
+        </div>
+        <div class="stats-card">
+            <h3>出海状态统计</h3>
+            <div id="offshore-chart" class="chart-container"></div>
+        </div>
+        <div class="stats-card">
+            <h3>人员在场状态</h3>
+            <div id="attendance-chart" class="chart-container"></div>
+        </div>
+    </div>
+    
+    <div class="data-section">
+        <h2>详细数据</h2>
+        <div class="table-actions">
+            <button onclick="exportToExcel()" class="btn btn-secondary">导出Excel</button>
+        </div>
+        <table class="data-table" id="personnel-table">
+            <!-- 表格内容将通过JavaScript动态加载 -->
+        </table>
+    </div>
+</div> 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风电场管理系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/wind-industry.css">
+    <link rel="stylesheet" href="css/personnel.css">
+    <link rel="stylesheet" href="css/equipment.css">
+    <link rel="stylesheet" href="css/reports.css">
+    <link rel="stylesheet" href="css/salary.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script src="js/api.js"></script>
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">风电场管理系统</div>
+        <ul class="nav-links">
+            <li><a href="#" data-page="salary">薪酬管理</a></li>
+            <li><a href="#" data-page="personnel">人员状态</a></li>
+            <li><a href="#" data-page="reports">工作汇报</a></li>
+            <li><a href="#" data-page="equipment">机组状态</a></li>
+        </ul>
+    </nav>
+    <main class="main-content">
+        <header>
+            <h1>欢迎使用风电场管理系统</h1>
+            <div class="user-info">
+                <span id="username">用户名</span>
+                <button id="logout" class="btn btn-secondary">退出</button>
+            </div>
+        </header>
+        <div id="content-container">
+            <!-- 页面内容将在这里动态加载 -->
+            <div class="dashboard">
+                <!-- 默认显示仪表板内容 -->
+            </div>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+    <script>
+        // 确保 API 和其他依赖项加载完成
+        window.addEventListener('load', function() {
+            if (typeof initSalary === 'function') {
+                initSalary();
+            }
+        });
+    </script>
+</body>
+</html> 

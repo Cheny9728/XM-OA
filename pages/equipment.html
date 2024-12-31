@@ -1,0 +1,40 @@
+<div class="equipment-content">
+    <h2>机组状态</h2>
+    <div class="dashboard-grid">
+        <div class="status-card total">
+            <h3>总机组数</h3>
+            <div class="value" id="total-count">--</div>
+        </div>
+        <div class="status-card running">
+            <h3>正常运行</h3>
+            <div class="value" id="running-count">--</div>
+        </div>
+        <div class="status-card maintenance">
+            <h3>维护中</h3>
+            <div class="value" id="maintenance-count">--</div>
+        </div>
+        <div class="status-card error">
+            <h3>故障停机</h3>
+            <div class="value" id="error-count">--</div>
+        </div>
+    </div>
+    
+    <div class="chart-section">
+        <h3>发电量趋势</h3>
+        <div class="chart-filters">
+            <select id="time-range">
+                <option value="day">24小时</option>
+                <option value="week">7天</option>
+                <option value="month">30天</option>
+            </select>
+        </div>
+        <div id="power-chart" class="chart-container"></div>
+    </div>
+    
+    <div class="turbine-list">
+        <h3>机组列表</h3>
+        <div class="list-container">
+            <!-- 机组列表将通过JavaScript动态加载 -->
+        </div>
+    </div>
+</div> 

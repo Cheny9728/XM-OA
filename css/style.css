@@ -1,0 +1,246 @@
+/* 全局样式 */
+:root {
+    --primary-color: #1a5f7a;    /* 深蓝色，代表专业性 */
+    --secondary-color: #66b7e3;  /* 浅蓝色，象征风能 */
+    --accent-color: #2ecc71;     /* 绿色，代表清洁能源 */
+    --bg-color: #f5f9fc;         /* 浅灰蓝色背景 */
+    --text-color: #2c3e50;
+    --border-color: #e3eaf2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* 侧边栏样式优化 */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(180deg, var(--primary-color) 0%, #154d63 100%);
+    color: white;
+    padding: 0;
+}
+
+.logo {
+    font-size: 1.5em;
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background: url('../images/wind-turbine-icon.svg') no-repeat 20px center;
+    background-size: 24px;
+    margin-bottom: 10px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.nav-links li a.active {
+    background-color: var(--secondary-color);
+    color: white;
+    position: relative;
+}
+
+.nav-links li a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--accent-color);
+}
+
+/* 主内容区域样式优化 */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--bg-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/* 数据卡片通用样式 */
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* 表格样式优化 */
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.data-table th {
+    background-color: #f8fafc;
+    padding: 15px;
+    text-align: left;
+    font-weight: 500;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.data-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* 按钮样式优化 */
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #154d63;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* 状态标签样式 */
+.status-tag {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-normal {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-warning {
+    background-color: #fff3e0;
+    color: #ef6c00;
+}
+
+.status-error {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+/* 添加导航链接的活动状态样式 */
+.nav-links a.active {
+    background-color: rgba(255,255,255,0.1);
+    border-left: 4px solid var(--accent-color);
+}
+
+/* 内容容器样式 */
+#content-container {
+    padding: 20px;
+    height: calc(100vh - 80px); /* 减去头部高度 */
+    overflow-y: auto;
+}
+
+/* 添加页面切换动画 */
+#content-container > * {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+/* 添加加载状态样式 */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--primary-color);
+}
+
+.loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 错误提示样式 */
+.error {
+    padding: 20px;
+    background-color: #ffebee;
+    color: #c62828;
+    border-radius: 8px;
+    margin: 20px 0;
+} 

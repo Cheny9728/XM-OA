@@ -1,0 +1,129 @@
+<div class="salary-content">
+    <h2>薪酬管理</h2>
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="performance" onclick="switchTab('performance')">月度绩效评价</button>
+        <button class="tab-btn" data-tab="allowance" onclick="switchTab('allowance')">月度补贴</button>
+    </div>
+    
+    <div class="tab-content active" id="performance">
+        <div class="section-header">
+            <h3>月度绩效评价</h3>
+            <div class="actions">
+                <div class="upload-section">
+                    <button class="btn btn-primary" onclick="document.getElementById('file-upload').click()">
+                        <i class="fas fa-upload"></i> 上传绩效文件
+                    </button>
+                    <input type="file" id="file-upload" hidden accept=".xlsx,.xls">
+                </div>
+                <div class="search-section">
+                    <input type="month" id="performance-month" class="form-control">
+                    <button class="btn btn-secondary" onclick="searchPerformance()">
+                        <i class="fas fa-search"></i> 查询
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="performance-summary">
+            <div class="summary-card">
+                <h4>本月评分</h4>
+                <div class="score">95</div>
+                <div class="trend positive">+2.5%</div>
+            </div>
+            <div class="summary-card">
+                <h4>绩效等级</h4>
+                <div class="grade">A</div>
+                <div class="description">优秀</div>
+            </div>
+            <div class="summary-card">
+                <h4>排名</h4>
+                <div class="rank">5/32</div>
+                <div class="trend positive">上升2名</div>
+            </div>
+        </div>
+
+        <div class="performance-details">
+            <table class="data-table" id="performance-table">
+                <thead>
+                    <tr>
+                        <th>评价项目</th>
+                        <th>权重</th>
+                        <th>得分</th>
+                        <th>评价人</th>
+                        <th>评价时间</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 数据将通过JavaScript动态加载 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="tab-content" id="allowance">
+        <div class="section-header">
+            <h3>月度补贴明细</h3>
+            <div class="filter-section">
+                <select id="allowance-year" class="form-control">
+                    <option value="2024">2024年</option>
+                    <option value="2023">2023年</option>
+                </select>
+                <select id="allowance-month" class="form-control">
+                    <option value="">选择月份</option>
+                    <option value="1">1月</option>
+                    <option value="2">2月</option>
+                    <option value="3">3月</option>
+                    <option value="4">4月</option>
+                    <option value="5">5月</option>
+                    <option value="6">6月</option>
+                    <option value="7">7月</option>
+                    <option value="8">8月</option>
+                    <option value="9">9月</option>
+                    <option value="10">10月</option>
+                    <option value="11">11月</option>
+                    <option value="12">12月</option>
+                </select>
+                <button class="btn btn-secondary" onclick="searchAllowance()">
+                    <i class="fas fa-search"></i> 查询
+                </button>
+            </div>
+        </div>
+
+        <div class="allowance-summary">
+            <div class="summary-card">
+                <h4>基本补贴</h4>
+                <div class="amount">¥2,500</div>
+            </div>
+            <div class="summary-card">
+                <h4>加班补贴</h4>
+                <div class="amount">¥800</div>
+            </div>
+            <div class="summary-card">
+                <h4>特殊补贴</h4>
+                <div class="amount">¥1,200</div>
+            </div>
+            <div class="summary-card total">
+                <h4>总计</h4>
+                <div class="amount">¥4,500</div>
+            </div>
+        </div>
+
+        <div class="allowance-details">
+            <table class="data-table" id="allowance-table">
+                <thead>
+                    <tr>
+                        <th>补贴类型</th>
+                        <th>金额</th>
+                        <th>发放日期</th>
+                        <th>说明</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 数据将通过JavaScript动态加载 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> 
